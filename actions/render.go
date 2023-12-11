@@ -1,8 +1,8 @@
 package actions
 
 import (
-	"buffalo_simple_lib/public"
-	"buffalo_simple_lib/templates"
+	"buffalo_book/public"
+	"buffalo_book/templates"
 
 	"github.com/gobuffalo/buffalo/render"
 )

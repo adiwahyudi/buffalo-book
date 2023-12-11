@@ -1,0 +1,14 @@
+<h3>Editing <%= book.Title %> </h3>
+
+<%= form_for(book, {action: bookUpdatePath({id: book.ID}), method: "PUT"}) { %>
+    <%= f.InputTag("Title") %>
+    <%= f.InputTag("Author") %>
+    <%= f.InputTag("Publisher") %>
+    <%= f.TextArea("Description") %>
+    <%= f.InputTag("Year", {type: "number"}) %>
+    <%= f.FileTag("ImageFile") %>
+    <%= f.InputTag("ISBN") %>
+    <%= f.InputTag("Pages", {type: "number"}) %>
+    <%= f.InputTag("Stock", {type: "number"}) %>
+    <%= f.SubmitTag("Edit", {class: "btn btn-primary"})%>
+<% } %>

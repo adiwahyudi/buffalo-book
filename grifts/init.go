@@ -1,7 +1,7 @@
 package grifts
 
 import (
-	"buffalo_simple_lib/actions"
+	"buffalo_book/actions"
 
 	"github.com/gobuffalo/buffalo"
 )

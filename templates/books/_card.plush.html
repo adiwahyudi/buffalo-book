@@ -1,0 +1,19 @@
+<div class="card mb-3 shadow-sm rounded-lg">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="<%= book.image_url %>" class="card-img img-fluid h-100 rounded-start" alt="Book Cover">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><a href="/books/<%= book.ID %>"><%= book.Title %></a></h5>
+        <p class="card-text font-italic mb-1"><%= book.Author %></p>
+        <div class="d-flex justify-content-between mb-2">
+          <span class="badge bg-primary text-light"><%= book.Genre %></span>
+          <span class="text-muted"><i class="bi bi-star-fill text-warning"></i> <%= book.Rating %></span>
+        </div>
+        <p class="card-text text-muted"><%= book.Description %></p>
+        <a href="/books/<%= book.ID %>" class="btn btn-primary btn-sm">View Details</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"sync"
 
-	"buffalo_simple_lib/locales"
-	"buffalo_simple_lib/models"
-	"buffalo_simple_lib/public"
+	"buffalo_book/locales"
+	"buffalo_book/models"
+	"buffalo_book/public"
 
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/buffalo-pop/v3/pop/popmw"
@@ -45,7 +45,7 @@ func App() *buffalo.App {
 	appOnce.Do(func() {
 		app = buffalo.New(buffalo.Options{
 			Env:         ENV,
-			SessionName: "_buffalo_simple_lib_session",
+			SessionName: "_buffalo_book_session",
 		})
 
 		// Automatically redirect to SSL
@@ -66,6 +66,17 @@ func App() *buffalo.App {
 		app.Use(translations())
 
 		app.GET("/", HomeHandler)
+
+		bookGroup := app.Group("/books/")
+		// Book
+		bookGroup.GET("", BooksIndex)
+		bookGroup.GET("new", BooksNew)
+		bookGroup.GET("{id}", BooksShow)
+		bookGroup.GET("{id}/edit", BooksEdit)
+
+		bookGroup.POST("", BooksCreate)
+		bookGroup.PUT("{id}/update", BooksUpdate)
+		bookGroup.DELETE("{id}/delete", BooksDestroy)
 
 		app.ServeFiles("/", http.FS(public.FS())) // serve files from the public directory
 	})

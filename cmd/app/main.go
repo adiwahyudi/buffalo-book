@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"buffalo_simple_lib/actions"
+	"buffalo_book/actions"
 )
 
 // main is the starting point for your Buffalo application.

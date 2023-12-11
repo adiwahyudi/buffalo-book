@@ -1,0 +1,48 @@
+<%= partial("header.html") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 book-image">
+      <img src="<%= assetPath("images/book_cover") %>/<%= book.ImageURL %>" alt="Book Cover" class="img-fluid rounded shadow mb-3">
+    </div>
+    <div class="col-md-6 book-details">
+      <h1 class="display-4 book-title font-elegant mb-2"><%= book.Title %></h1>
+      <h4 class="text-muted book-author"><%= book.Author %></h4>
+      <p class="book-info mb-3"><%= book.Publisher %> - <%= book.Year %></p>
+      <hr class="elegant-line">
+      <p class="book-description lead"><%= book.Description %></p>
+    </div>
+  </div>
+
+  <hr class="elegant-line">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="mb-3">Additional Information</h3>
+      <table class="table table-striped table-hover table-elegant">
+        <tbody>
+          <tr>
+            <th><i class="fas fa-barcode"></i> ISBN</th>
+            <td><%= book.ISBN %></td>
+          </tr>
+          <tr>
+            <th><i class="fas fa-book-open"></i> Number of Pages</th>
+            <td><%= book.Pages %></td>
+          </tr>
+          <tr>
+            <th><i class="fas fa-check-circle"></i> Availability</th>
+            <td><%= book.Stock %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-center space-between">
+      <%= linkTo(bookDeletePath({id: book.ID}), {class: "btn btn-danger btn-sm rounded shadow", "data-method": "DELETE", body: "Delete"}) %>
+      <%= linkTo(booksPath({}), {class: "btn btn-info btn-sm rounded shadow ml-3 mr-3", body: "Back to all Books"})%>
+      <%= linkTo(editBookPath({id: book.ID}), {class: "btn btn-warning btn-sm rounded shadow", body: "Edit"})%>
+    </div>
+  </div>
+
+</div>

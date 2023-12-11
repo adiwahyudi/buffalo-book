@@ -4,8 +4,8 @@ FROM gobuffalo/buffalo:v0.18.14 as builder
 
 ENV GOPROXY http://proxy.golang.org
 
-RUN mkdir -p /src/buffalo_simple_lib
-WORKDIR /src/buffalo_simple_lib
+RUN mkdir -p /src/buffalo_book
+WORKDIR /src/buffalo_book
 
 # this will cache the npm install step, unless package.json changes
 ADD package.json .

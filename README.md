@@ -37,3 +37,11 @@ We recommend you heading over to [http://gobuffalo.io](http://gobuffalo.io) and 
 Good luck!
 
 [Powered by Buffalo](http://gobuffalo.io)
+
+
+## How setup and run the application.
+1. `clone` this repository.
+2. Setup the database at `database.yml`.
+3. Migration the database, `buffalo pop migrate up`.
+4. Run the seeder, `buffalo task db:seed`.
+5. Start the application using `buffalo dev`.

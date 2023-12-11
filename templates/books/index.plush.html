@@ -1,0 +1,26 @@
+<%= partial("header.html") %>
+<h1>All Book</h1>
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Year</th>
+        <th>Action</th>
+    </tr>
+    </thead>    
+    <tbody>
+    <%= for (book) in books { %>
+        <tr>
+            <td><%= book.Title %> </td>
+            <td><%= book.Author %> </td>
+            <td><%= book.Publisher %> </td>
+            <td><%= book.Year %> </td>
+            <td>
+                <a href="/books/<%= book.ID %>" class="btn btn-primary btn-sm">View</a>
+            </td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
